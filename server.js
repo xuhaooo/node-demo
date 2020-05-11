@@ -21,11 +21,6 @@ var server = http.createServer(function (request, response) {
 	var queryObject = parsedUrl.query
 	var method = request.method
 
-	// 从这里开始看，上面的不要看
-
-	console.log('方方说：得到 HTTP 路径\n' + path)
-	console.log('方方说：查询字符串为\n' + query)
-	console.log('方方说：不含查询字符串的路径为\n' + pathNoQuery)
 
 	if (path == '/') {
 		response.write('Hi\n')
@@ -36,7 +31,7 @@ var server = http.createServer(function (request, response) {
 			'<!DOCTYPE><html>' +
 				'<head><link rel="stylesheet" href="/style">' +
 				'</head><body>' +
-				'<h1>你好帅啊</h1>' +
+				'<h1>成功了</h1>' +
 				'<script src="/script"></script>' +
 				'</body></html>'
 		)
@@ -54,7 +49,6 @@ var server = http.createServer(function (request, response) {
 		response.end()
 	}
 
-	// 代码结束，下面的不要看
 })
 server.listen(port)
 console.log('监听' + port + '成功\n请打开http://localhost:' + port)
